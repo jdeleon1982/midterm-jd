@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="containerIcon">
+            <ul class="iconNav">
+                <li><a href="art.html"><img src="img/facebook.jpg" alt="Art" width="30" height="30"></a></li>
+                <li><a href="books.html"><img src="img/instagram.jpg" alt="Books" width="30" height="30"></a></li>
+            </ul>
+        </div>
+
+        <div class="containerNav">
+            <a href="index.html" class="logo">
+                <img src="img/logo.jpg" alt="Logo">
+            </a>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="illustrations.html">Illustrations</a></li>
+                    <li><a href="posters.html">Posters</a></li>
+                    <li><a href="branding.html">Branding</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="covers.html">Covers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Toggle button for mobile view -->
+            <div class="nav-toggle" id="navToggle">☰</div>
+        </div>
+    </header>
+    <div class="gradientBackground">
+    <main>
+        <section id="storyContainer">
+            <div id="mainTitle">
+                <h1>CONTACT</h1>
+            </div>
+        </section>
+
+        <section id="formBox"></section>
+
+        <!-- Updated form action to use Formspree endpoint -->
+        <form class="contactForm" action="https://formspree.io/f/movqvdzj" method="POST">
+            <div class="formGroup">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <div class="formGroup">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+            <div class="formGroup">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="formGroup">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="formGroup">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="Submit">Submit</button>
+        </form>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><em>Copyright</em><br>&copy; 2024</p>
+    </footer>
+
+    <!-- JavaScript to toggle mobile navigation -->
+    <script>
+        document.querySelector('.contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+        
+            var formData = new FormData(this); // Collect form data
+        
+            // Send form data using Fetch API to Formspree endpoint
+            fetch('https://formspree.io/f/movqvdzj', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show a success message or do something after successful form submission
+                    alert("Thank you! Your message has been sent.");
+                    document.querySelector('.contactForm').reset(); // Clear the form
+                } else {
+                    alert("Oops! There was a problem submitting your form.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error); // Log error to console
+                alert("There was a problem submitting your form. Please try again.");
+            });
+        });
+    </script>
+</body>
+</html>
+

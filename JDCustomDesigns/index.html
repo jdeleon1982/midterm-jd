@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dope Queen</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div class="containerIcon">
+            <ul class="iconNav">
+                <li><a href="https://www.facebook.com/yourfacebookusername" target="_blank">
+                    <img src="img/facebook.jpg" alt="Facebook" width="30" height="30">
+                </a></li>
+                <li><a href="https://www.instagram.com/yourinstagramusername" target="_blank">
+                    <img src="img/instagram.jpg" alt="Instagram" width="30" height="30">
+                </a></li>
+            </ul>
+        </div>
+
+        <div class="containerNav">
+            <a href="index.html" class="logo">
+                <img src="img/logo.jpg" alt="Logo">
+            </a>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="illustrations.html">Illustrations</a></li>
+                    <li><a href="posters.html">Posters</a></li>
+                    <li><a href="branding.html">Branding</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="covers.html">Covers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Toggle button for mobile view -->
+            <div class="nav-toggle" id="navToggle">☰</div>
+        </div>
+    </header>
+
+    <!-- GRADIENT -->
+    <div class="gradientBackground">
+        <main>
+            <section id="bodyContent" class="flexContainer">
+                <div class="titleContainer">
+                    <!-- Title -->
+                    <h1>MEET<br> THE <br>ARTIST</h1>
+                    <a href="contact.html" class="button">Contact</a>
+                </div>
+
+                <article id="articleSection">
+                    <figure class="artistPic">
+                        <img src="img/artist.jpg" width="300" height="350" alt="artist">
+                    </figure>
+                    <div class="artistParagraph">
+                        <p>Jennifer DeLeon, founder of JD Custom Designs, is a versatile creator known for bringing her illustrations to life through digital art. Her creative talents span across multiple mediums, including home decor, where she crafts unique and personalized pieces. Jennifer is also the visionary behind Dope Queen 707, a music brand featured on all major streaming platforms. As an entrepreneur, she has branded her own tamale business, with future plans to expand into a food truck. In addition, she continues to explore her artistic passions through designing posters and various other forms of creative expression.</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            <em>Copyright</em><br>
+            &copy; 2024
+        </p>
+    </footer>
+
+    <!-- JavaScript to toggle mobile navigation -->
+    <script>
+        document.getElementById('navToggle').addEventListener('click', function() {
+            var navMenu = document.getElementById('navMenu');
+            if (navMenu.style.display === 'block') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
